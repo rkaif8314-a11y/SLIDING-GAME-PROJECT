@@ -37,9 +37,17 @@
       </div>
     </section>
 
-    <section class="setup panel" id="setupPanel"><div class="setup-heading"><span>GAME SETUP</span><small>Choose everything before you start</small></div><div class="setup-grid"><label>PLAYER NAME<input id="playerName" maxlength="18" placeholder="Enter your name" autocomplete="name"></label><label>BOARD SIZE<select id="boardSize"><option value="2">2 × 2</option><option value="3">3 × 3</option><option value="4" selected>4 × 4</option><option value="5">5 × 5</option><option value="6">6 × 6</option></select></label><div class="difficulty-group"><span>DIFFICULTY</span><div class="difficulty-options"><button type="button" data-level="easy" class="difficulty-choice active">EASY<small>Quick warm-up</small></button><button type="button" data-level="medium" class="difficulty-choice">MEDIUM<small>Think ahead</small></button><button type="button" data-level="hard" class="difficulty-choice">HARD<small>Serious challenge</small></button></div></div></div><button class="primary-btn start-btn" id="startGameBtn">START GAME <span>→</span></button></section><section class="game-layout" id="gameArea" hidden>
+    <section class="setup panel" id="setupPanel"><div class="setup-heading"><span>GAME SETUP</span><small>Choose everything before you start</small></div><div class="setup-grid"><label>PLAYER NAME<input id="playerName" maxlength="18" placeholder="Enter your name" autocomplete="name"></label><label>BOARD SIZE<select id="boardSize"><option value="2">2 × 2</option><option value="3">3 × 3</option><option value="4" selected>4 × 4</option><option value="5">5 × 5</option><option value="6">6 × 6</option></select></label><div class="difficulty-group"><span>DIFFICULTY</span><div class="difficulty-options"><button type="button" data-level="easy" class="difficulty-choice active">EASY<small>Quick warm-up</small></button><button type="button" data-level="medium" class="difficulty-choice">MEDIUM<small>Think ahead</small></button><button type="button" data-level="hard" class="difficulty-choice">HARD<small>Serious challenge</small></button></div></div></div><div class="color-theme">
+  <span class="theme-section-title">CUSTOM THEME</span>
+  <div class="color-controls">
+    <label class="color-control"><span>BACKGROUND</span><div><input id="bgColor" type="color" value="#090d18"><code id="bgHex">#090D18</code></div></label>
+    <label class="color-control"><span>TEXT</span><div><input id="textColor" type="color" value="#f6f7fb"><code id="textHex">#F6F7FB</code></div></label>
+    <button type="button" class="preset-btn" id="resetThemeBtn">RESET COLORS</button>
+  </div>
+</div>
+<button class="primary-btn start-btn" id="startGameBtn">START GAME <span>→</span></button></section><section class="game-layout" id="gameArea" hidden>
       <aside class="panel stats-panel">
-        <div class="panel-heading"><span>RUN STATS</span><span class="live-dot">LIVE</span></div>
+        <div class="panel-heading"><span>RUN STATS</span><span class="live-dot" id="runStatus">READY</span></div>
         <div class="stat-card primary"><span>Moves</span><strong id="moves">0</strong></div>
         <div class="stat-card"><span>Time</span><strong id="time">00:00</strong></div>
         <div class="stat-card"><span>Best</span><strong id="best">—</strong></div>
