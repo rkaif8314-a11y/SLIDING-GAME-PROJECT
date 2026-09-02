@@ -37,7 +37,7 @@
       </div>
     </section>
 
-    <section class="game-layout">
+    <section class="setup panel" id="setupPanel"><div class="setup-heading"><span>GAME SETUP</span><small>Choose everything before you start</small></div><div class="setup-grid"><label>PLAYER NAME<input id="playerName" maxlength="18" placeholder="Enter your name" autocomplete="name"></label><label>BOARD SIZE<select id="boardSize"><option value="2">2 × 2</option><option value="3">3 × 3</option><option value="4" selected>4 × 4</option><option value="5">5 × 5</option><option value="6">6 × 6</option></select></label><div class="difficulty-group"><span>DIFFICULTY</span><div class="difficulty-options"><button type="button" data-level="easy" class="difficulty-choice active">EASY<small>Quick warm-up</small></button><button type="button" data-level="medium" class="difficulty-choice">MEDIUM<small>Think ahead</small></button><button type="button" data-level="hard" class="difficulty-choice">HARD<small>Serious challenge</small></button></div></div></div><button class="primary-btn start-btn" id="startGameBtn">START GAME <span>→</span></button></section><section class="game-layout" id="gameArea" hidden>
       <aside class="panel stats-panel">
         <div class="panel-heading"><span>RUN STATS</span><span class="live-dot">LIVE</span></div>
         <div class="stat-card primary"><span>Moves</span><strong id="moves">0</strong></div>
@@ -47,12 +47,12 @@
           <div class="tip-title">HOW TO PLAY</div>
           <p>Tap a tile next to the empty space. You can also use the arrow keys or WASD.</p>
         </div>
-        <button class="primary-btn full" id="newGameBtn">NEW GAME <span>↻</span></button>
+        <button class="primary-btn full" id="newGameBtn">NEW GAME <span>↻</span></button><button class="secondary-btn full" id="changeSetupBtn">CHANGE SETUP <span>⚙</span></button>
       </aside>
 
       <section class="board-wrap">
         <div class="board-topline">
-          <div><span class="mode-kicker">CLASSIC</span><h2>15 Puzzle</h2></div>
+          <div><span class="mode-kicker">CLASSIC</span><h2 id="boardTitle">15 Puzzle</h2></div>
           <div class="difficulty" id="difficultyLabel">RANDOMIZED</div>
         </div>
         <div class="board" id="board" role="grid" aria-label="15 puzzle board"></div>
@@ -80,8 +80,8 @@
     </section>
 
     <footer class="footer">
-      <span>SLIDE 15 · Built from the original Python puzzle concept</span>
-      <span>Keyboard <b>W A S D</b> · Arrows <b>← ↑ → ↓</b></span>
+      <span>SLIDE · Built from your original Python puzzle concept</span>
+      <span id="footerControls">Keyboard <b>W A S D</b> · Arrows <b>← ↑ → ↓</b></span>
     </footer>
   </main>
 
