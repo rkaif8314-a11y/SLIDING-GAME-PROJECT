@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b1020" />
+  <meta name="description" content="Slide 15 — a polished sliding puzzle game." />
+  <title>Slide 15 — Sliding Puzzle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background-grid"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Slide 15 home">
+        <span class="brand-mark">15</span>
+        <span><strong>SLIDE</strong><small>puzzle lab</small></span>
+      </a>
+      <div class="top-actions">
+        <button class="icon-btn" id="soundBtn" aria-label="Toggle sound">🔊</button>
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">◐</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow"><span class="pulse-dot"></span> BROWSER EDITION</div>
+        <h1>Think fast.<br><span>Slide smarter.</span></h1>
+        <p>Master the classic 15 puzzle with smooth controls, smart shuffling, and your best runs saved locally.</p>
+      </div>
+      <div class="hero-badge">
+        <div class="badge-value" id="bestBadge">—</div>
+        <div class="badge-label">BEST MOVES</div>
+      </div>
+    </section>
+
+    <section class="game-layout">
+      <aside class="panel stats-panel">
+        <div class="panel-heading"><span>RUN STATS</span><span class="live-dot">LIVE</span></div>
+        <div class="stat-card primary"><span>Moves</span><strong id="moves">0</strong></div>
+        <div class="stat-card"><span>Time</span><strong id="time">00:00</strong></div>
+        <div class="stat-card"><span>Best</span><strong id="best">—</strong></div>
+        <div class="tip-box">
+          <div class="tip-title">HOW TO PLAY</div>
+          <p>Tap a tile next to the empty space. You can also use the arrow keys or WASD.</p>
+        </div>
+        <button class="primary-btn full" id="newGameBtn">NEW GAME <span>↻</span></button>
+      </aside>
+
+      <section class="board-wrap">
+        <div class="board-topline">
+          <div><span class="mode-kicker">CLASSIC</span><h2>15 Puzzle</h2></div>
+          <div class="difficulty" id="difficultyLabel">RANDOMIZED</div>
+        </div>
+        <div class="board" id="board" role="grid" aria-label="15 puzzle board"></div>
+        <div class="mobile-controls" aria-label="Arrow controls">
+          <button data-dir="up">↑</button>
+          <div><button data-dir="left">←</button><button data-dir="down">↓</button><button data-dir="right">→</button></div>
+        </div>
+        <div class="board-footer">
+          <span>Solvable shuffle</span><span>•</span><span>No repeats</span><span>•</span><span>Local save</span>
+        </div>
+      </section>
+
+      <aside class="panel leaderboard-panel">
+        <div class="panel-heading"><span>HALL OF FAME</span><button id="clearScoresBtn" class="text-btn">CLEAR</button></div>
+        <div class="leaderboard" id="leaderboard"></div>
+        <div class="mini-card">
+          <span>Fastest time</span>
+          <strong id="fastest">—</strong>
+        </div>
+        <div class="mini-card">
+          <span>Total solved</span>
+          <strong id="solvedCount">0</strong>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="footer">
+      <span>SLIDE 15 · Built from the original Python puzzle concept</span>
+      <span>Keyboard <b>W A S D</b> · Arrows <b>← ↑ → ↓</b></span>
+    </footer>
+  </main>
+
+  <div class="modal" id="winModal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="confetti" id="confetti"></div>
+      <div class="win-icon">✦</div>
+      <p class="eyebrow">PUZZLE COMPLETE</p>
+      <h2>Clean solve.</h2>
+      <p class="win-copy">You cleared the board with style. Your run has been saved.</p>
+      <div class="win-stats"><div><span>MOVES</span><strong id="finalMoves">0</strong></div><div><span>TIME</span><strong id="finalTime">00:00</strong></div></div>
+      <div class="modal-actions"><button class="primary-btn" id="playAgainBtn">PLAY AGAIN</button><button class="secondary-btn" id="closeModalBtn">KEEP SCORE</button></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
