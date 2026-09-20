@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#0b1020" />
-  <meta name="description" content="Slide 15 — a polished sliding puzzle game." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Slide 15 — a polished sliding puzzle game.">
   <title>Slide 15 — Sliding Puzzle</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="background-grid"></div>
@@ -20,12 +20,12 @@
         <span><strong>SLIDE</strong><small>puzzle lab</small></span>
       </a>
       <div class="top-actions">
-        <button class="icon-btn" id="soundBtn" aria-label="Toggle sound">🔊</button>
-        <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">◐</button>
+        <button type="button" class="icon-btn" id="soundBtn" aria-label="Toggle sound">🔊</button>
+        <button type="button" class="icon-btn" id="themeBtn" aria-label="Toggle theme">◐</button>
       </div>
     </header>
 
-    <section class="hero">
+    <section class="hero" aria-label="Game introduction">
       <div>
         <div class="eyebrow"><span class="pulse-dot"></span> BROWSER EDITION</div>
         <h1>Think fast.<br><span>Slide smarter.</span></h1>
@@ -37,16 +37,16 @@
       </div>
     </section>
 
-    <section class="setup panel" id="setupPanel"><div class="setup-heading"><span>GAME SETUP</span><small>Choose everything before you start</small></div><div class="setup-grid"><label>PLAYER NAME<input id="playerName" maxlength="18" placeholder="Enter your name" autocomplete="name"></label><label>BOARD SIZE<select id="boardSize"><option value="2">2 × 2</option><option value="3">3 × 3</option><option value="4" selected>4 × 4</option><option value="5">5 × 5</option><option value="6">6 × 6</option></select></label><div class="difficulty-group"><span>DIFFICULTY</span><div class="difficulty-options"><button type="button" data-level="easy" class="difficulty-choice active">EASY<small>Quick warm-up</small></button><button type="button" data-level="medium" class="difficulty-choice">MEDIUM<small>Think ahead</small></button><button type="button" data-level="hard" class="difficulty-choice">HARD<small>Serious challenge</small></button></div></div></div><div class="color-theme">
+    <section class="setup panel" id="setupPanel" aria-label="Game setup"><div class="setup-heading"><span>GAME SETUP</span><small>Choose everything before you start</small></div><div class="setup-grid"><label>PLAYER NAME<input type="text" id="playerName" maxlength="18" placeholder="Enter your name" autocomplete="name"></label><label>BOARD SIZE<select id="boardSize"><option value="2">2 × 2</option><option value="3">3 × 3</option><option value="4" selected>4 × 4</option><option value="5">5 × 5</option><option value="6">6 × 6</option></select></label><div class="difficulty-group"><span>DIFFICULTY</span><div class="difficulty-options"><button type="button" data-level="easy" class="difficulty-choice active">EASY<small>Quick warm-up</small></button><button type="button" data-level="medium" class="difficulty-choice">MEDIUM<small>Think ahead</small></button><button type="button" data-level="hard" class="difficulty-choice">HARD<small>Serious challenge</small></button></div></div></div><div class="color-theme">
   <span class="theme-section-title">CUSTOM THEME</span>
   <div class="color-controls">
-    <label class="color-control"><span>BACKGROUND</span><div><input id="bgColor" type="color" value="#090d18"><code id="bgHex">#090D18</code></div></label>
-    <label class="color-control"><span>TEXT</span><div><input id="textColor" type="color" value="#f6f7fb"><code id="textHex">#F6F7FB</code></div></label>
+    <label class="color-control"><span>BACKGROUND</span><span class="color-value"><input id="bgColor" type="color" value="#090d18"><code id="bgHex">#090D18</code></span></label>
+    <label class="color-control"><span>TEXT</span><span class="color-value"><input id="textColor" type="color" value="#f6f7fb"><code id="textHex">#F6F7FB</code></span></label>
     <button type="button" class="preset-btn" id="resetThemeBtn">RESET COLORS</button>
   </div>
 </div>
-<button class="primary-btn start-btn" id="startGameBtn">START GAME <span>→</span></button></section><section class="game-layout" id="gameArea" hidden>
-      <aside class="panel stats-panel">
+<button type="button" class="primary-btn start-btn" id="startGameBtn">START GAME <span>→</span></button></section><section class="game-layout" id="gameArea" hidden aria-label="Puzzle game">
+      <aside class="panel stats-panel" aria-label="Run statistics">
         <div class="panel-heading"><span>RUN STATS</span><span class="live-dot" id="runStatus">READY</span></div>
         <div class="stat-card primary"><span>Moves</span><strong id="moves">0</strong></div>
         <div class="stat-card"><span>Time</span><strong id="time">00:00</strong></div>
@@ -55,26 +55,26 @@
           <div class="tip-title">HOW TO PLAY</div>
           <p>Tap a tile next to the empty space. You can also use the arrow keys or WASD.</p>
         </div>
-        <button class="primary-btn full" id="newGameBtn">NEW GAME <span>↻</span></button><button class="secondary-btn full" id="changeSetupBtn">CHANGE SETUP <span>⚙</span></button>
+        <button type="button" class="primary-btn full" id="newGameBtn">NEW GAME <span>↻</span></button><button type="button" class="secondary-btn full" id="changeSetupBtn">CHANGE SETUP <span>⚙</span></button>
       </aside>
 
-      <section class="board-wrap">
+      <section class="board-wrap" aria-label="Puzzle board">
         <div class="board-topline">
           <div><span class="mode-kicker">CLASSIC</span><h2 id="boardTitle">15 Puzzle</h2></div>
           <div class="difficulty" id="difficultyLabel">RANDOMIZED</div>
         </div>
         <div class="board" id="board" role="grid" aria-label="15 puzzle board"></div>
-        <div class="mobile-controls" aria-label="Arrow controls">
-          <button data-dir="up">↑</button>
-          <div><button data-dir="left">←</button><button data-dir="down">↓</button><button data-dir="right">→</button></div>
+        <div class="mobile-controls" role="group" aria-label="Arrow controls">
+          <button type="button" data-dir="up">↑</button>
+          <div><button type="button" data-dir="left">←</button><button type="button" data-dir="down">↓</button><button type="button" data-dir="right">→</button></div>
         </div>
         <div class="board-footer">
           <span>Solvable shuffle</span><span>•</span><span>No repeats</span><span>•</span><span>Local save</span>
         </div>
       </section>
 
-      <aside class="panel leaderboard-panel">
-        <div class="panel-heading"><span>HALL OF FAME</span><button id="clearScoresBtn" class="text-btn">CLEAR</button></div>
+      <aside class="panel leaderboard-panel" aria-label="Hall of fame">
+        <div class="panel-heading"><span>HALL OF FAME</span><button type="button" id="clearScoresBtn" class="text-btn">CLEAR</button></div>
         <div class="leaderboard" id="leaderboard"></div>
         <div class="mini-card">
           <span>Fastest time</span>
@@ -93,15 +93,15 @@
     </footer>
   </main>
 
-  <div class="modal" id="winModal" aria-hidden="true">
+  <div class="modal" id="winModal" aria-label="Puzzle complete" hidden>
     <div class="modal-card">
-      <div class="confetti" id="confetti"></div>
-      <div class="win-icon">✦</div>
+      <div class="confetti" id="confetti" aria-hidden="true"></div>
+      <div class="win-icon" aria-hidden="true">✦</div>
       <p class="eyebrow">PUZZLE COMPLETE</p>
       <h2>Clean solve.</h2>
       <p class="win-copy">You cleared the board with style. Your run has been saved.</p>
       <div class="win-stats"><div><span>MOVES</span><strong id="finalMoves">0</strong></div><div><span>TIME</span><strong id="finalTime">00:00</strong></div></div>
-      <div class="modal-actions"><button class="primary-btn" id="playAgainBtn">PLAY AGAIN</button><button class="secondary-btn" id="closeModalBtn">KEEP SCORE</button></div>
+      <div class="modal-actions"><button type="button" class="primary-btn" id="playAgainBtn">PLAY AGAIN</button><button type="button" class="secondary-btn" id="closeModalBtn">KEEP SCORE</button></div>
     </div>
   </div>
   <script src="script.js"></script>
