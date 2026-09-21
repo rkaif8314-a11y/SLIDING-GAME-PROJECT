@@ -47,7 +47,7 @@
 </div>
 <button type="button" class="primary-btn start-btn" id="startGameBtn">START GAME <span>→</span></button></section><section class="game-layout" id="gameArea" hidden aria-label="Puzzle game">
       <aside class="panel stats-panel" aria-label="Run statistics">
-        <div class="panel-heading"><span>RUN STATS</span><span class="live-dot" id="runStatus">READY</span></div>
+        <div class="panel-heading"><span>RUN STATS</span><span class="live-dot" id="runStatus" aria-live="polite">READY</span></div>
         <div class="stat-card primary"><span>Moves</span><strong id="moves">0</strong></div>
         <div class="stat-card"><span>Time</span><strong id="time">00:00</strong></div>
         <div class="stat-card"><span>Best</span><strong id="best">—</strong></div>
@@ -93,7 +93,7 @@
     </footer>
   </main>
 
-  <div class="modal" id="winModal" aria-label="Puzzle complete" hidden>
+  <div class="modal" id="winModal" role="dialog" aria-modal="true" aria-label="Puzzle complete" hidden>
     <div class="modal-card">
       <div class="confetti" id="confetti" aria-hidden="true"></div>
       <div class="win-icon" aria-hidden="true">✦</div>
